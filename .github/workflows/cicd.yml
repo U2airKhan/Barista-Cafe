@@ -39,10 +39,6 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         VM_HOST: ${{ secrets.VM_HOST }}
       run: |
-        # Install SSH client if not already installed
-        sudo apt-get update
-        sudo apt-get install -y ssh
-
         # Configure SSH key
         mkdir -p ~/.ssh
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
